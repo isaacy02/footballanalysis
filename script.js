@@ -1,5 +1,10 @@
-// Simulated dataset
-let footballData = [];
+// Initialize footballData from localStorage or as an empty array
+let footballData = JSON.parse(localStorage.getItem('footballData')) || [];
+
+// Function to save data to localStorage
+function saveData() {
+  localStorage.setItem('footballData', JSON.stringify(footballData));
+}
 
 // Handle form submission
 document.getElementById('play-form').addEventListener('submit', function(e) {
@@ -10,9 +15,8 @@ document.getElementById('play-form').addEventListener('submit', function(e) {
   const offensiveFormation = document.getElementById('offensive-formation').value;
   const defensiveFormation = document.getElementById('defensive-formation').value;
   const yardage = parseInt(document.getElementById('yardage').value);
-  const success = document.getElementById('success').value === 'true';
 
-  // Assign an exact play type based on the play type
+  // Simulate assigning an exact play type based on play type
   const exactPlayTypes = {
     Run: ["HB Dive", "HB Stretch", "HB Toss"],
     Pass: ["Slant", "Post", "Fade"],
@@ -27,11 +31,13 @@ document.getElementById('play-form').addEventListener('submit', function(e) {
     Exact_Play_Type: exactPlayType,
     Offensive_Formation: offensiveFormation,
     Defensive_Formation: defensiveFormation,
-    Yardage_Gained: yardage,
-    Success: success
+    Yardage_Gained: yardage
   });
 
-  // Perform analysis
+  // Save the updated data to localStorage
+  saveData();
+
+  // Perform analysis and update display
   displayAnalysis();
 });
 
@@ -63,3 +69,6 @@ function groupBy(data, keys) {
     return result;
   }, {});
 }
+
+// Display analysis on page load
+displayAnalysis();
