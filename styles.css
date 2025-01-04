@@ -2,64 +2,56 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #f8f9fa;
 }
 
-/* Navigation Bar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
   background-color: #007BFF;
+  padding: 10px 20px;
   color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
-.nav-logo {
+.navbar .nav-logo {
   font-size: 20px;
   font-weight: bold;
 }
 
-.nav-links {
+.navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.nav-links li {
+.navbar .nav-links li {
   display: inline;
 }
 
-.nav-links a {
+.navbar .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
 }
 
-.nav-links a:hover {
+.navbar .nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Section Styles */
 section {
   padding: 20px;
   margin: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 pre {
   background-color: #f4f4f4;
   padding: 10px;
-  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
