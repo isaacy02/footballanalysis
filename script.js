@@ -62,17 +62,32 @@ document.getElementById('play-form').addEventListener('submit', function(e) {
 function displayAnalysis() {
   const resultDiv = document.getElementById('analysis-output');
 
-  // Group by Exact_Play_Type, Play_Type, and Defensive_Formation
-  const groupedData = groupBy(footballData, ['Exact_Play_Type', 'Play_Type', 'Defensive_Formation']);
-  let resultText = 'Average Yardage by Exact Play Type, Play Type, and Defensive Formation:\n\n';
+  let resultText = '--- Analysis Results ---\n\n';
 
-  // Calculate averages
-  for (const [key, plays] of Object.entries(groupedData)) {
-    const averageYardage = plays.reduce((sum, play) => sum + play.Yardage_Gained, 0) / plays.length;
-    resultText += `${key}: ${averageYardage.toFixed(2)} yards\n`;
-  }
+  // Average yardage grouped by Exact_Play_Type
+  resultText += calculateAverage('Exact Play Type', ['Exact_Play_Type']);
+  resultText += calculateAverage('Play Type & Offensive Formation', ['Play_Type', 'Offensive_Formation']);
+  resultText += calculateAverage('Exact Play, Play Type & Offensive Formation', ['Exact_Play_Type', 'Play_Type', 'Offensive_Formation']);
+  resultText += calculateAverage('Play Type, Offensive & Defensive Formation', ['Play_Type', 'Offensive_Formation', 'Defensive_Formation']);
+  resultText += calculateAverage('Exact Play, Offensive & Defensive Formation', ['Exact_Play_Type', 'Play_Type', 'Offensive_Formation', 'Defensive_Formation']);
+  resultText += calculateAverage('Play Type & Defensive Formation', ['Play_Type', 'Defensive_Formation']);
+  resultText += calculateAverage('Exact Play & Defensive Formation', ['Exact_Play_Type', 'Play_Type', 'Defensive_Formation']);
 
   resultDiv.innerText = resultText;
+}
+
+// Function to calculate averages for a given grouping
+function calculateAverage(title, groupByKeys) {
+  const groupedData = groupBy(footballData, groupByKeys);
+  let result = `${title}:\n`;
+
+  for (const [key, plays] of Object.entries(groupedData)) {
+    const averageYardage = plays.reduce((sum, play) => sum + play.Yardage_Gained, 0) / plays.length;
+    result += `  ${key}: ${averageYardage.toFixed(2)} yards\n`;
+  }
+
+  result += '\n';
+  return result;
 }
 
 // Helper function to group data
