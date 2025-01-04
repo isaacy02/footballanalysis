@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Football Play Analysis</h1>
-
-  <!-- Navigation Buttons -->
-  <div class="nav-buttons">
-    <button onclick="scrollToSection('input-section')">Enter Play Data</button>
-    <button onclick="scrollToSection('data-section')">View Grouped Data</button>
-  </div>
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-logo">Football Analysis</div>
+    <ul class="nav-links">
+      <li><a href="#input-section">Enter Play Data</a></li>
+      <li><a href="#data-section">View Grouped Data</a></li>
+      <li><a href="#about-section">About</a></li>
+    </ul>
+  </nav>
 
   <!-- Input Section -->
   <section id="input-section">
@@ -64,6 +66,13 @@
     <pre id="grouped-data-output">Loading grouped data...</pre>
   </section>
 
+  <!-- About Section -->
+  <section id="about-section">
+    <h2>About This Project</h2>
+    <p>This project allows users to analyze football plays by entering data and viewing grouped statistics.</p>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
+
