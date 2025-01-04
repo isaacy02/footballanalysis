@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
+  background-color: #f4f4f9;
 }
 
 h1 {
@@ -14,11 +15,13 @@ form {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 label {
   display: block;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 input, select, button {
@@ -45,4 +48,6 @@ button:hover {
   margin-top: 20px;
   padding: 10px;
   border-top: 1px solid #ccc;
+  background-color: #fff;
 }
+
