@@ -89,4 +89,3 @@ function groupBy(data, keys) {
 
 // Display analysis on page load
 displayAnalysis();
-
