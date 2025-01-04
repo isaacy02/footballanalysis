@@ -1,0 +1,44 @@
+---
+title: "Play Data Entry"
+---
+
+<section id="input-section">
+  <h2>Enter Play Data</h2>
+  <form id="play-form">
+    <label for="play-type">Play Type:</label>
+    <select id="play-type" name="play-type" required>
+      <option value="Run">Run</option>
+      <option value="Pass">Pass</option>
+      <option value="Screen">Screen</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <label for="exact-play-type">Exact Play Type:</label>
+    <select id="exact-play-type" name="exact-play-type" required>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <label for="offensive-formation">Offensive Formation:</label>
+    <select id="offensive-formation" name="offensive-formation" required>
+      <option value="I-Formation">I-Formation</option>
+      <option value="Shotgun">Shotgun</option>
+      <option value="Single Back">Single Back</option>
+      <option value="Pistol">Pistol</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <label for="defensive-formation">Defensive Formation:</label>
+    <select id="defensive-formation" name="defensive-formation" required>
+      <option value="4-3">4-3</option>
+      <option value="3-4">3-4</option>
+      <option value="Nickel">Nickel</option>
+      <option value="Dime">Dime</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <label for="yardage">Yardage Gained:</label>
+    <input type="number" id="yardage" name="yardage" required>
+
+    <button type="submit">Submit Play</button>
+  </form>
+</section>

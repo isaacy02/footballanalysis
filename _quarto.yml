@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "Isaac Football Analysis"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Analysis"
+        menu:
+          - text: "Play Data Entry"
+            href: analysis/data-entry.qmd
+          - text: "Grouped Data"
+            href: analysis/grouped-data.qmd
+      - text: "Blog"
+        menu:
+          - text: "Football Strategies"
+            href: blog/strategies.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    include-after-body: script.js

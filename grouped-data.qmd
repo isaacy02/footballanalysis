@@ -1,0 +1,8 @@
+---
+title: "Grouped Data"
+---
+
+<section id="data-section">
+  <h2>Grouped Data</h2>
+  <pre id="grouped-data-output">Loading grouped data...</pre>
+</section>
