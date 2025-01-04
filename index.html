@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Play Analysis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Football Play Analysis</h1>
+
+  <form id="play-form">
+    <label for="play-type">Play Type:</label>
+    <select id="play-type" name="play-type" required>
+      <option value="Run">Run</option>
+      <option value="Pass">Pass</option>
+      <option value="Screen">Screen</option>
+    </select>
+
+    <label for="offensive-formation">Offensive Formation:</label>
+    <select id="offensive-formation" name="offensive-formation" required>
+      <option value="I-Formation">I-Formation</option>
+      <option value="Shotgun">Shotgun</option>
+      <option value="Single Back">Single Back</option>
+      <option value="Pistol">Pistol</option>
+    </select>
+
+    <label for="defensive-formation">Defensive Formation:</label>
+    <select id="defensive-formation" name="defensive-formation" required>
+      <option value="4-3">4-3</option>
+      <option value="3-4">3-4</option>
+      <option value="Nickel">Nickel</option>
+      <option value="Dime">Dime</option>
+    </select>
+
+    <label for="yardage">Yardage Gained:</label>
+    <input type="number" id="yardage" name="yardage" required>
+
+    <label for="success">Success:</label>
+    <select id="success" name="success" required>
+      <option value="true">True</option>
+      <option value="false">False</option>
+    </select>
+
+    <button type="submit">Submit Play</button>
+  </form>
+
+  <div id="results">
+    <h2>Analysis Results</h2>
+    <pre id="analysis-output"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
