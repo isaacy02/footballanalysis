@@ -21,7 +21,7 @@ document.getElementById('play-type').addEventListener('change', function () {
   // Clear existing options
   exactPlayTypeSelect.innerHTML = '';
 
-  // Populate new options
+  // Populate new options based on playType
   exactPlayTypes[playType].forEach(type => {
     const option = document.createElement('option');
     option.value = type;
@@ -89,3 +89,4 @@ function groupBy(data, keys) {
 
 // Display analysis on page load
 displayAnalysis();
+
