@@ -9,7 +9,7 @@ h1 {
   color: #333;
 }
 
-form {
+form, .nav-buttons {
   max-width: 400px;
   margin: 0 auto;
   padding: 10px;
@@ -18,35 +18,17 @@ form {
   background-color: #fff;
 }
 
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-input, select, button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  box-sizing: border-box;
-}
-
 button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
   background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 button:hover {
   background-color: #0056b3;
-}
-
-#results {
-  margin-top: 20px;
-  padding: 10px;
-  border-top: 1px solid #ccc;
-  background-color: #fff;
 }
