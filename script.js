@@ -13,6 +13,11 @@ function saveData() {
   localStorage.setItem('footballData', JSON.stringify(footballData));
 }
 
+// Scroll to section
+function scrollToSection(sectionId) {
+  document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
+
 // Populate Exact_Play_Type options dynamically
 document.getElementById('play-type')?.addEventListener('change', function () {
   const playType = this.value;
@@ -60,3 +65,5 @@ function displayGroupedData() {
   groupedOutput.textContent = JSON.stringify(footballData, null, 2);
 }
 
+// Display grouped data on page load
+displayGroupedData();
