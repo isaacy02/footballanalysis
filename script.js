@@ -1,3 +1,10 @@
+// Define exact play types for each play type
+const exactPlayTypes = {
+  Run: ["HB Dive", "HB Stretch", "HB Toss", "Zone Read", "Power-O", "QB Draw"],
+  Pass: ["Slant", "Post", "Fade", "Quick Out", "Comeback", "Crossing Route"],
+  Screen: ["Screen Left", "Screen Right", "Bubble Screen"]
+};
+
 // Initialize footballData from localStorage or as an empty array
 let footballData = JSON.parse(localStorage.getItem('footballData')) || [];
 
@@ -6,24 +13,36 @@ function saveData() {
   localStorage.setItem('footballData', JSON.stringify(footballData));
 }
 
+// Populate Exact_Play_Type options when Play_Type changes
+document.getElementById('play-type').addEventListener('change', function () {
+  const playType = this.value;
+  const exactPlayTypeSelect = document.getElementById('exact-play-type');
+
+  // Clear existing options
+  exactPlayTypeSelect.innerHTML = '';
+
+  // Populate new options
+  exactPlayTypes[playType].forEach(type => {
+    const option = document.createElement('option');
+    option.value = type;
+    option.textContent = type;
+    exactPlayTypeSelect.appendChild(option);
+  });
+});
+
+// Initialize Exact_Play_Type dropdown on page load
+document.getElementById('play-type').dispatchEvent(new Event('change'));
+
 // Handle form submission
 document.getElementById('play-form').addEventListener('submit', function(e) {
   e.preventDefault();
 
   // Capture form data
   const playType = document.getElementById('play-type').value;
+  const exactPlayType = document.getElementById('exact-play-type').value;
   const offensiveFormation = document.getElementById('offensive-formation').value;
   const defensiveFormation = document.getElementById('defensive-formation').value;
   const yardage = parseInt(document.getElementById('yardage').value);
-
-  // Simulate assigning an exact play type based on play type
-  const exactPlayTypes = {
-    Run: ["HB Dive", "HB Stretch", "HB Toss"],
-    Pass: ["Slant", "Post", "Fade"],
-    Screen: ["Screen Left", "Screen Right", "Bubble Screen"]
-  };
-
-  const exactPlayType = exactPlayTypes[playType][Math.floor(Math.random() * exactPlayTypes[playType].length)];
 
   // Add the play to the dataset
   footballData.push({
@@ -34,10 +53,8 @@ document.getElementById('play-form').addEventListener('submit', function(e) {
     Yardage_Gained: yardage
   });
 
-  // Save the updated data to localStorage
+  // Save data and display analysis
   saveData();
-
-  // Perform analysis and update display
   displayAnalysis();
 });
 
