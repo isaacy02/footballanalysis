@@ -1,0 +1,40 @@
+---
+title: "Play Data Entry"
+---
+
+<section id="input-section">
+  <h2>Enter Play Data</h2>
+  <form id="play-form">
+    <label for="play-type">Play Type:</label>
+    <select id="play-type" name="play-type" required>
+      <option value="Run">Run</option>
+      <option value="Pass">Pass</option>
+      <option value="Screen">Screen</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <label for="exact-play-type">Exact Play Type:</label>
+    <input type="text" id="exact-play-type-search" placeholder="Search for a play" autocomplete="off">
+    <ul id="exact-play-type-list" style="border: 1px solid #ccc; max-height: 150px; overflow-y: auto; display: none;"></ul>
+
+    <label for="offensive-formation">Offensive Formation:</label>
+    <input type="text" id="offensive-formation-search" placeholder="Search for a formation" autocomplete="off">
+    <ul id="offensive-formation-list" style="border: 1px solid #ccc; max-height: 150px; overflow-y: auto; display: none;"></ul>
+
+    <label for="defensive-formation">Defensive Formation:</label>
+    <select id="defensive-formation" name="defensive-formation" required>
+      <option value="4-3">4-3</option>
+      <option value="3-4">3-4</option>
+      <option value="Nickel">Nickel</option>
+      <option value="Dime">Dime</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <label for="yardage">Yardage Gained:</label>
+    <input type="number" id="yardage" name="yardage" required>
+
+    <button type="submit">Submit Play</button>
+  </form>
+</section>
+
+<script src="../script.js"></script>

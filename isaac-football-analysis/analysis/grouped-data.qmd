@@ -1,0 +1,11 @@
+---
+title: "Grouped Data"
+---
+
+<section id="data-section">
+  <h2>Grouped Data Analysis</h2>
+  <div id="grouped-data-output">Loading grouped data...</div>
+</section>
+
+<!-- Link script.js manually -->
+<script src="../script.js"></script>
