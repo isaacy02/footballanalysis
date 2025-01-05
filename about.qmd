@@ -1,5 +1,0 @@
----
-title: "About This Project"
----
-
-This project is dedicated to analyzing football plays by collecting and organizing data. Explore the Analysis section for more insights!
