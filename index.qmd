@@ -1,6 +1,0 @@
----
-title: "Welcome to Football Analysis"
----
-
-Welcome to Isaac Young's Football Analysis website! Navigate through the sections to explore play data, grouped statistics, and more.
-
